@@ -12,8 +12,23 @@ void draw(){
   fill(0,0,0,5);
   rect(0,0,400,400);
   
-  stroke((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256),50);
+  stroke((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   
+  beginShape();
+  while(endX < 500){    
+    strokeWeight(3);
+    curveVertex(startX, startY);
+    //curveVertex(startX, startY);
+           
+    startX = endX;
+    startY = endY;
+    
+    endX = startX + ((int)(Math.random()*15));
+    endY = startY + ((int)((Math.random())*18)-9);
+  }
+  endShape();
+
+  /*
   while(endX < 400){    
     strokeWeight(5);
     stroke(0,0,255,150);
@@ -29,6 +44,7 @@ void draw(){
     endX = startX + ((int)(Math.random()*15));
     endY = startY + ((int)((Math.random())*18)-9);
   }
+  */
 }
 
 void mousePressed(){
