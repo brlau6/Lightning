@@ -12,58 +12,29 @@ void setup(){
 }
 
 void draw(){
-  fill(0,0,0,25);
+  fill(0,0,0,10);
   rect(0,0,400,400);
   
   //stroke((int)(Math.random()*256), (int)(Math.random()*256), (int)(Math.random()*256));
   
-  /*
-  while(startX < 500){
-    stroke(0,0,255);
-    strokeWeight(4);
-    beginShape();
-    curveVertex(startX,startY);
-    
-    strokeWeight(2);
-    stroke(255,255,255);
-    beginShape();
-    curveVertex(startX,startY);
-    
-    startX = startX + ((int)(Math.random()*15));
-    startY = startY + ((int)((Math.random())*18)-9);
-  }
-  endShape();
-  */
-  
-  /*
-  beginShape();
-  while(startX < 500){    
-    strokeWeight(3);
-    //curveVertex(startX, startY);
-
-    startX = startX + ((int)(Math.random()*15));
-    startY = startY + ((int)((Math.random())*18)-9);
-  }
-  endShape();
-  */
-  
   while(endX < 400){    
     strokeWeight(5);
-    stroke(0,0,255,150);
-    line(startX, startY, endX, endY);
+    stroke(0,0,255);//blue
+    line(startX+2, startY+2, endX, endY);
     
     strokeWeight(2);
     stroke(255,255,255);
     line(startX, startY, endX, endY);//thin line
     
     //branch
-    if(startX>branchStart){
-      newY = startY; //don't cause line to jerk upward
-      newX = startX;
+    
+    if(startX>180){
+      //newY = startY; //don't cause line to jerk upward
+      //newX = startX;
       while(newX < 400){
         strokeWeight(5);
         stroke(0,0,255,150);
-        line(startX, startY, newX, newY);
+        line(startX+2, startY+2, newX, newY);
         
         strokeWeight(2);
         stroke(255,255,255);
@@ -76,6 +47,7 @@ void draw(){
         newY = startY + ((int)((Math.random())*18)-9);
       }
     }
+    
     startX = endX;
     startY = endY;
     
