@@ -20,8 +20,11 @@ void draw(){
   rect(0,0,400,400);
   image(img,100,0, width/2.25, height/3); //draws palpatine
   fill(255);
-  text("Click to force toggle", 255,30);
+  text("Click to force block the", 255,30);
   text("UNLIMITED POWER!", 255,50);
+     //note for web version; don't need to reload on Processing
+  text("Reload to",20,30);
+  text("restart power",20,50);
   
   lightning(130,120,130,120,0,220,160);//left
   lightning(260,130,260,130,0,220,160);//right
