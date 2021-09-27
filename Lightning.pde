@@ -44,7 +44,7 @@ void lightning(int startX, int startY, int endX, int endY, int newX, int newY, i
     line(startX, startY, endX, endY);//thin line
     
     if(startY>branch){
-      // increase 3 to decrease branches, decrease 3 to increase branches
+      // increase 4 to decrease branches, decrease 4 to increase branches
       if(Math.random()*4 < 1){
         newY = startY;
       }
@@ -76,7 +76,9 @@ void lightning(int startX, int startY, int endX, int endY, int newX, int newY, i
 // toggle lightning animation on mouseclick
 void mousePressed(){
   loop = !loop;
-  if(loop == false)
+  if(loop == false){
     noLoop();
-  loop();
+  } else {
+    loop();
+  }
 }
